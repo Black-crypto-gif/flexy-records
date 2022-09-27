@@ -1,0 +1,25 @@
+// Import all of Bootstrap's CSS
+@import "node_modules/bootstrap/scss/bootstrap";
+
+
+.item-logo{
+    margin: 1rem;
+    transition: 0.9s;
+}
+.item-logo:hover{
+    transform: scale(1.2);
+}
+.main-section{
+    margin:5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:1.5rem;
+}
+.d-title{
+    text-align: center;
+}
+.d-button{
+    display: block;
+    margin: 2.5rem;
+}
