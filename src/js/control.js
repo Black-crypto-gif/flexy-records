@@ -2,7 +2,49 @@
 const submitChange = document.getElementById('submit-f');
 const form = document.querySelector('.input-group');
 const root = document.getElementById('root');
+const toolbar = document.getElementById('toor');
+const calculation = async () => {
+  let uri = 'http://localhost:3000/djezzy';
+  const res = await fetch(uri);
+  const posts = await res.json();
+  let sum = 0;
+  for (var i in posts){
+    sum += parseInt(posts[i].val2);
+  }
+  let fees = 0;
+  for (var i in posts){
+    fees += parseInt(posts[i].val1);
+  }
+  let templateCalculate = `
+  <button type="button" class="btn btn-primary">
+  Total Price without fees : <span class="badge text-bg-secondary">
+    ${sum}.00 DA.
+  </span>
+  </button>
+  <button type="button" class="btn btn-primary">
+  Total Price with fees : <span class="badge text-bg-secondary">
+    ${sum + fees}.00 DA.
+  </span>
+  </button>
+  <button type="button" class="btn btn-primary">
+  Total fees : <span class="badge text-bg-secondary">
+    ${fees}.00 DA.
+  </span>
+  </button>
+  `;
+  toolbar.innerHTML = templateCalculate;
+ 
+ /*  posts.forEach(post =>{
+    templateCalculate += 
+    `
+    <span>
+      ${post.val2}
+    </span>
+    `
+  }) */
 
+}
+calculation();
 
 submitChange.addEventListener('click', (e)=>{
     e.preventDefault();
@@ -68,7 +110,7 @@ window.addEventListener('DOMContentLoaded', (e) =>{
 });
 
  // delete flexy :
- const id = new URLSearchParams(window.location.search).get('id');
+ /* const id = new URLSearchParams(window.location.search).get('id');
  const  deleteBtn = document.querySelector('.delete');
 
 async function myFunction() {
@@ -80,3 +122,4 @@ async function myFunction() {
      window.location.replace("/");
  }
 deleteBtn.addEventListener('click', myFunction());
+ */
