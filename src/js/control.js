@@ -50,10 +50,12 @@ submitChange.addEventListener('click', (e)=>{
     e.preventDefault();
     var sel = document.querySelector('.form-select');
     var value1 = parseInt(sel.options[sel.selectedIndex].value);
-    const value2 = parseInt(document.querySelector('.form-control').value);
+    var number = parseInt(document.querySelector('#numbers').value);
+    const value2 = parseInt(document.querySelector('#val').value);
     const doc = {
        val1 : value1,
-       val2: value2
+       val2: value2,
+       val3: number
       }
     fetch('http://localhost:3000/djezzy', {
     method: 'POST',
@@ -61,6 +63,7 @@ submitChange.addEventListener('click', (e)=>{
     headers: { 'Content-Type': 'application/json' }
   })
   window.location.replace('/');
+  
 });
 
 // show all values :
@@ -82,7 +85,7 @@ const renderPosts = async (term) => {
         <th scope="col">Price</th>
         <th scope="col">Fees</th>
         <th scope="col">Totals</th>
-        <th scope="col">Delete</th>
+        <th scope="col">Number</th>
       </tr>
     </thead>
     <tbody>
@@ -91,13 +94,7 @@ const renderPosts = async (term) => {
         <td>${post.val2}.00</td>
         <td>${post.val1}.00</td>
         <td>${post.val1 + post.val2}.00</td>
-        <td>
-          
-          <button class="btn delete">
-            Delete
-          </button>
-
-        </td>
+        <td>0${post.val3}</td>
       </tr>
     </tbody>
 </table>

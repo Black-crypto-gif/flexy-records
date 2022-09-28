@@ -65,10 +65,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group mb-3">
-                       
-                        <span class="input-group-text">Add Price</span>
-                        <input type="text" class="form-control" name="val" aria-label="Amount (to the nearest dollar)">
+                    <div class="input-group gap-2">
+                        <span class="input-group-text">Add Price with number</span>
+                        <div class="input-group flex-nowrap">
+                          <span class="input-group-text" id="addon-wrapping">Number :</span>
+                          <input type="text" id="numbers" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                        </div>
+                        <input type="text" class="form-control" id="val" aria-label="Amount (to the nearest dollar)">
                         <span class="input-group-text">.00</span>
                         <select name="fees" class="form-select" aria-label="Default select example">
                           <option  selected>Select value</option>
