@@ -1,7 +1,17 @@
 // Import all of Bootstrap's CSS
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
 @import "node_modules/bootstrap/scss/bootstrap";
-
-
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(3,155,229);
+    color: white;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+}
 .item-logo{
     margin: 1rem;
     transition: 0.9s;
@@ -15,11 +25,20 @@
     justify-content: center;
     flex-direction: column;
     gap:1.5rem;
+    
 }
 .d-title{
+    border-radius: 10px;
     text-align: center;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
 }
 .d-button{
     display: block;
     margin: 2.5rem;
+}
+.btn-secondary{
+    padding: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }

@@ -1,67 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Vite</title>
-  </head>
-  <body>
-    <!-- The begening of the nav bar section -->
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Records Flexy</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Records Flexy</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a  data-bs-toggle="tooltip" data-bs-placement="right"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title="djezzy" class="nav-link " aria-current="page" href="#"><img class="item-logo"  width="150px" src="./assets/djezzy.png" alt="djezzy"/></a>
-                </li>
-                <li class="nav-item">
-                  <a
-                  data-bs-toggle="tooltip" data-bs-placement="right"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title="mobilis"  
-                   class="nav-link " aria-current="page" href="#"><img class="item-logo" width="150px" src="./assets/ATM_Mobilis.svg.png" alt="djezzy" /></a>
-                </li>
-                <li class="nav-item">
-                  <a
-                  data-bs-toggle="tooltip" data-bs-placement="right"
-                  data-bs-custom-class="custom-tooltip"
-                  data-bs-title="ooredoo"
-                   class="nav-link" aria-current="page" href="#"><img class="item-logo" width="150px" src="./assets/ooredoo.png" alt="djezzy" /></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icons8.png">
+    <title>Area Mobile</title>
+</head>
+<body>
+     <!-- The begening of the nav bar section -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/area mobile logo.png" width="125px" class="logo-logo" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          ADD
+       </button>
+      </div>
+    </nav>
       <!-- The end of the nav bar section -->
       <!-- ADD values price start -->
         <!-- Button trigger modal -->
        <div class="main-section">
-        <h1 class="d-title">Djezzy Flexy Records </h1>
+        <h1 class="d-title">
+          Credit Lists Values 
+        </h1>
         <div id="toor">
           
         </div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-           ADD
-        </button>
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+          <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">ADD FLEXY</h5>
+              
+              <div class="modal-header">
+                  <h1 class="bg-dark p-2 rounded text-center" >ADD CREDIT</h1>
+                <h5 class="modal-title" id="exampleModalLabel">ADD CREDIT</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -78,12 +57,14 @@
                           <option value="10">10</option>
                           <option value="20">20</option>
                           <option value="30">30</option>
+                          <option value="40">40</option>
+                          <option value="50">50</option>
                         </select>
                       </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="submit-f" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="submit-f" class="btn btn-success">Save changes</button>
                 </div>
             </div>
             </div>
@@ -98,7 +79,5 @@
 
     <script type="module" src="./js/main.js"></script>
     <script src="./js/control.js"></script>
-    
-   
-  </body>
+</body>
 </html>

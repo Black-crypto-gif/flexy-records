@@ -16,18 +16,18 @@ const calculation = async () => {
     fees += parseInt(posts[i].val1);
   }
   let templateCalculate = `
-  <button type="button" class="btn btn-primary">
-  Total Price without fees : <span class="badge text-bg-secondary">
+  <button type="button" class="btn btn-secondary">
+  Total Price without fees : <span class="badge text-bg-danger">
     ${sum}.00 DA.
   </span>
   </button>
-  <button type="button" class="btn btn-primary">
-  Total Price with fees : <span class="badge text-bg-secondary">
+  <button type="button" class="btn btn-secondary">
+  Total Price with fees : <span class="badge text-bg-danger">
     ${sum + fees}.00 DA.
   </span>
   </button>
-  <button type="button" class="btn btn-primary">
-  Total fees : <span class="badge text-bg-secondary">
+  <button type="button" class="btn btn-secondary">
+  Total fees : <span class="badge text-bg-danger">
     ${fees}.00 DA.
   </span>
   </button>
@@ -52,10 +52,12 @@ submitChange.addEventListener('click', (e)=>{
     var value1 = parseInt(sel.options[sel.selectedIndex].value);
     var number = parseInt(document.querySelector('#numbers').value);
     const value2 = parseInt(document.querySelector('#val').value);
+    const date = new Date();
     const doc = {
        val1 : value1,
        val2: value2,
-       val3: number
+       val3: number,
+       val4: date
       }
     fetch('http://localhost:3000/djezzy', {
     method: 'POST',
@@ -86,6 +88,7 @@ const renderPosts = async (term) => {
         <th scope="col">Fees</th>
         <th scope="col">Totals</th>
         <th scope="col">Number</th>
+        <th scope="col">Date and Time</th>
       </tr>
     </thead>
     <tbody>
@@ -95,6 +98,7 @@ const renderPosts = async (term) => {
         <td>${post.val1}.00</td>
         <td>${post.val1 + post.val2}.00</td>
         <td>0${post.val3}</td>
+        <td>${post.val4}</td>
       </tr>
     </tbody>
 </table>
