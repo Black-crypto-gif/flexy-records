@@ -14,21 +14,49 @@
         <a class="navbar-brand" href="#">
           <img src="./assets/area mobile logo.png" width="125px" class="logo-logo" alt="logo">
         </a>
+        <a class="btn btn-dark" id="admin-option" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          ADMIN OPTION (CTRL+F2)
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          ADD
+       <button type="button" id="add-trigger" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          ADD (CTRL+F1)
        </button>
+       <form class="d-flex" role="search">
+        <input class="form-control me-2" id="input-number" type="number" placeholder="Search by number" aria-label="Search">
+        <button class="btn btn-outline-dark" id="searchByNumber" type="submit">Search</button>
+      </form>
       </div>
+     
     </nav>
       <!-- The end of the nav bar section -->
+      <!-- Offcanvas for adding values-->
+      
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- Information goes here -->
+          <button class="btn">
+            click
+          </button>
+          <button class="btn">
+            click
+          </button>
+        </div>
+      </div>
       <!-- ADD values price start -->
         <!-- Button trigger modal -->
        <div class="main-section">
         <h1 class="d-title">
           Credit Lists Values 
         </h1>
+        <div class="bg-danger" id="root2">
+
+        </div>
         <div id="toor">
           
         </div>
