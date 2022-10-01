@@ -124,3 +124,40 @@ async function myFunction() {
  }
 deleteBtn.addEventListener('click', myFunction());
  */
+
+// click on add :
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'F1' && event.ctrlKey) {
+    document.getElementById('add-trigger').click();
+  }
+});
+window.addEventListener('keydown', (event) => {
+  if (event.code === 'F2' && event.ctrlKey) {
+    document.getElementById('admin-option').click();
+  }
+});
+
+//search bar function:
+const searchForm = document.getElementById('searchByNumber')
+const root2 = document.getElementById('root2');
+/* let id = document.getElementById('input-number').value; */
+
+const renderSearch = async () => {
+  const searchForm = parseInt(document.getElementById('searchByNumber').value)
+  let uri = `http://localhost:3000/djezzy?&q=`;
+  console.log(uri)
+  const res = await fetch(uri);
+  const posts = await res.json();
+  let template = `
+  <div class="post">
+    <h2></h2>
+  </div>
+  `;
+  root2.innerHTML = template;
+}
+// search
+searchForm.addEventListener('click', async (e) => {
+  e.preventDefault();
+  renderSearch(searchForm.value.trim());
+})
+
